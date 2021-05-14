@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "engines": {
+    "node": "15.14.0",
+    "npm": "7.7.6"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta2",
+    "concurrently": "^6.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "match-sorter": "^6.3.0",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "cliente": "npm start --prefix cliente",
+    "dev": "concurrently \"npm run server\" \"npm run cliente\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix cliente && npm run build --prefix cliente"
+  }
+}
